@@ -13,6 +13,9 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="flex">
+      <UniqueIdentifier>{c9bf1dc1-9072-4474-9ad5-e3feb12eac37}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -21,10 +24,34 @@
     <ClCompile Include="regex.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="test.c">
+      <Filter>flex</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="regex.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="Compiler-2.rc">
+      <Filter>Resource Files</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="keywords.txt">
+      <Filter>flex</Filter>
+    </Text>
+    <Text Include="out.txt">
+      <Filter>flex</Filter>
+    </Text>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="rules.lex">
+      <Filter>flex</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -1,0 +1,68 @@
+<preDir,#include <iostream>>
+<dt,int>
+<id,main>
+<rLP,(>
+<dt,int>
+<id,argc>
+<binaryOp,,>
+<dt,char>
+<dt,const>
+<binaryOp,*>
+<id,argv>
+<sLP,[>
+<sRP,]>
+<rRP,)>
+<cLP,{>
+<dt,int>
+<id,a>
+<binaryOp,,>
+<id,be2w>
+<delim,;>
+<id,a>
+<binaryOp,=>
+<id,a>
+<binaryOp,+>
+<number,2>
+<delim,;>
+<reserved,if>
+<rLP,(>
+<id,a>
+<relOp,<=>
+<binaryOp,=>
+<number,3>
+<rRP,)>
+<cLP,{>
+<id,printf>
+<rLP,(>
+<string,"laksdjflsjadf\n">
+<rRP,)>
+<delim,;>
+<dt,char>
+<id,in>
+<binaryOp,=>
+<charLit,'a'>
+<delim,;>
+<cRP,}>
+<id,b>
+<binaryOp,=>
+<id,b>
+<bitShift,<<>
+<id,a>
+<delim,;>
+<bitwiseOp,!>
+<id,a>
+<bitwiseOp,&>
+<id,b>
+<binaryOp,,>
+<reserved,return>
+<number,0>
+<delim,;>
+<lineComment,//dslfjlk sdlfkj>
+<blockComment,/*kdklfjjsd
+	sdlkjlksjdf
+
+	*/>
+<cRP,}>
+<preDir,#define     >
+<id,dslkafj>
+Total Lines=22
