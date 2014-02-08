@@ -66,6 +66,7 @@
   <ItemGroup>
     <ClCompile Include="main.cpp" />
     <ClCompile Include="regex.cpp" />
+    <ClCompile Include="test.c" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="regex.h" />
@@ -73,6 +74,13 @@
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Compiler-2.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="keywords.txt" />
+    <Text Include="out.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="rules.lex" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
