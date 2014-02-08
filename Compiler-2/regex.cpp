@@ -4,6 +4,7 @@
 #include "regex.h"
 using namespace std;
 
+
 State matchstate = { Match };	/* matching state */
 int nstate;
 List l1, l2;
