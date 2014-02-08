@@ -5,12 +5,8 @@
 using namespace std;
 
 
-State matchstate = { Match };	/* matching state */
-int nstate;
-List l1, l2;
-static int listid;
-char*
-re2post(char *re)
+
+char* regex::re2post(char *re)
 {
 	int nalt, natom;
 	static char buf[8000];
@@ -91,8 +87,7 @@ re2post(char *re)
 
 
 /* Allocate and initialize State */
-State*
-state(int c, State *out, State *out1)
+State* regex::state(int c, State *out, State *out1)
 {
 	State *s;
 
@@ -108,8 +103,7 @@ state(int c, State *out, State *out1)
 
 
 /* Initialize Frag struct. */
-Frag
-frag(State *start, Ptrlist *out)
+Frag frag(State *start, Ptrlist *out)
 {
 	Frag n = { start, out };
 	return n;
@@ -117,8 +111,7 @@ frag(State *start, Ptrlist *out)
 
 
 /* Create singleton list containing just outp. */
-Ptrlist*
-list1(State **outp)
+Ptrlist* regex::list1(State **outp)
 {
 	Ptrlist *l;
 
@@ -128,8 +121,7 @@ list1(State **outp)
 }
 
 /* Patch the list of states at out to point to start. */
-void
-patch(Ptrlist *l, State *s)
+void regex::patch(Ptrlist *l, State *s)
 {
 	Ptrlist *next;
 
@@ -140,8 +132,7 @@ patch(Ptrlist *l, State *s)
 }
 
 /* Join the two lists l1 and l2, returning the combination. */
-Ptrlist*
-append(Ptrlist *l1, Ptrlist *l2)
+Ptrlist* regex::append(Ptrlist *l1, Ptrlist *l2)
 {
 	Ptrlist *oldl1;
 
@@ -156,8 +147,7 @@ append(Ptrlist *l1, Ptrlist *l2)
 * Convert postfix regular expression to NFA.
 * Return start state.
 */
-State*
-post2nfa(char *postfix)
+State* regex::post2nfa(char *postfix)
 {
 	char *p;
 	Frag stack[1000], *stackp, e1, e2, e;
@@ -223,8 +213,7 @@ post2nfa(char *postfix)
 
 
 /* Compute initial state list */
-List*
-startlist(State *start, List *l)
+List* regex::startlist(State *start, List *l)
 {
 	l->n = 0;
 	listid++;
@@ -233,8 +222,7 @@ startlist(State *start, List *l)
 }
 
 /* Check whether state list contains a match. */
-int
-ismatch(List *l)
+int regex::ismatch(List *l)
 {
 	int i;
 
@@ -245,8 +233,7 @@ ismatch(List *l)
 }
 
 /* Add s to l, following unlabeled arrows. */
-void
-addstate(List *l, State *s)
+void regex::addstate(List *l, State *s)
 {
 	if (s == NULL || s->lastlist == listid)
 		return;
@@ -265,8 +252,7 @@ addstate(List *l, State *s)
 * past the character c,
 * to create next NFA state set nlist.
 */
-void
-step(List *clist, int c, List *nlist)
+void regex::step(List *clist, int c, List *nlist)
 {
 	int i;
 	State *s;
@@ -281,8 +267,7 @@ step(List *clist, int c, List *nlist)
 }
 
 /* Run NFA to determine whether it matches s. */
-int
-match(State *start, char *s)
+int regex::match(State *start, char *s)
 {
 	int i, c;
 	List *clist, *nlist, *t;
@@ -298,21 +283,14 @@ match(State *start, char *s)
 }
 
 
-bool regMatch(char *string, char *re){
+bool regex::regMatch(char *string, char *re){
 	int i;
 	char *post;
 	State *start;
-
-
 	post = re2post(re);
-
-
 	start = post2nfa(post);
-
-
 	l1.s = (State **)malloc(nstate*sizeof l1.s[0]);
 	l2.s = (State **)malloc(nstate*sizeof l2.s[0]);
-
 	if (match(start, string))
 		return true;
 	else

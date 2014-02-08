@@ -54,10 +54,12 @@ bool SymbolTable::lookup(string key, entry &val){
 int main(int argc, char** argv){
 	
 	char string[100], re[100];
+	
 	while (1){
+		regex r;
 		cin >> string >> re;
-		cout << re2post(re) << endl;
-		cout << regMatch(string, re) << endl;;
+		cout << r.re2post(re) << endl;
+		cout << r.regMatch(string, re) << endl;;
 	}
 	return 0;
 }
