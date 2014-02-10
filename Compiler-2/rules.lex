@@ -8,8 +8,8 @@
 preDir			("#include"[ \t]+.*)|("#define"[ \t]+.*)
 binaryOp 		[+-/*%=]
 relOp 			("=="|"<"|">"|"<="|">="|"!=")
-logicalOp 		("&&"|"||")
-bitwiseOp		("!"|"&"|"|"|"^")
+logicalOp 		("&&"|"||"|"!")
+bitwiseOp		("~"|"&"|"|"|"^")
 rLP				"(" 
 rRP 			")"
 cLP 			"{"  
@@ -18,6 +18,8 @@ sLP 			"["
 sRP 			"]"
 delim			[;,]
 bitShift		("<<"|">>")
+arithematic		("++"|"--")
+assignment		("+="|"-="|"*="|"/="|"%="|"<<="|">>="|"&="|"^="|"|=")
 
 lineComment		"//".*
 blockComment	"/*"[^"*/"]*"*/"
@@ -47,12 +49,15 @@ id {letter}({letter}|{digit})*
 {preDir}							{printf("<preDir,"); ECHO; printf(">\n");}
 {reserved}							{printf("<reserved,"); ECHO; printf(">\n");}
 {dt}								{printf("<dt,"); ECHO; printf(">\n");}
+{number}{letter}{letter|digit}*		{printf("Illegal identifier <"); ECHO; printf("> at line no.%d\n",lineNo+1);}
 {number}							{printf("<number,"); ECHO; printf(">\n");}
 {id}								{printf("<id,"); ECHO; printf(">\n");}
 {binaryOp}							{printf("<binaryOp,"); ECHO; printf(">\n");}
 {relOp}								{printf("<relOp,"); ECHO; printf(">\n");}
 {logicalOp}							{printf("<logicalOp,"); ECHO; printf(">\n");}
 {bitwiseOp}							{printf("<bitwiseOp,"); ECHO; printf(">\n");}
+{arithematic}						{printf("<arithematic,"); ECHO; printf(">\n");}
+{assignment}						{printf("<assignment,"); ECHO; printf(">\n");}
 {rLP}								{printf("<rLP,"); ECHO; printf(">\n");}
 {rRP}								{printf("<rRP,"); ECHO; printf(">\n");}
 {cLP}								{printf("<cLP,"); ECHO; printf(">\n");}

@@ -42,9 +42,9 @@ while reserved
 > relOp
 <= relOp
 >= relOp
-&& logicalOP
-|| logicalOP
-! bitwiseOp
+&& logicalOp
+|| logicalOp
+! logicalOp
 & bitwiseOp
 | bitwiseOp
 ^ bitwiseOp
