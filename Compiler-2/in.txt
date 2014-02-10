@@ -21,7 +21,6 @@ int main()
 
 		"this string has illegal symbols @#$$$ but they are not Illegal!"
 		"string has \" escaped quotes";
-		"This has two closing quotes. The nearest one will terminate string. The other one is illegal"
 
 	}
 	return 0;
