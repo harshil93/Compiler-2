@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main()
+{
+	float a = 2.1E-12 , b=1;
+	char s[10]="Compiler";
+	char chr='a';
+	if( a <= (b<<1) && 1A1 )
+	{
+		//This is a line comment
+		printf("This is a string 
+		
+					spanning 
+					multiple lines");
+		
+		/*
+		This is a block comment
+		It has two closing quotes. The nearest one will terminate the comment.
+		*/
+		*/
+
+		"this string has illegal symbols @#$$$ but they are not Illegal!"
+		"string has \" escaped quotes";
+		"This has two closing quotes. The nearest one will terminate string. The other one is illegal"
+
+	}
+	return 0;
+}
+@`

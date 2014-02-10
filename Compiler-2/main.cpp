@@ -1,65 +1,41 @@
-
+#include "lex.h"
+#include "symbolTable.h"
 #include <iostream>
+#include <fstream>
+#include <cstdlib>
 #include <map>
-#include "regex.h"
-using namespace std;
+#include <string>
+#include <cctype>
+#include <conio.h>
+map<string, string> keyMap;
+SymbolTable st;
 
-struct entry{
-	int type;
-	string val;
-	
-};
-
-class SymbolTable
+void genTokenMap()
 {
-public:
-	SymbolTable();
-	~SymbolTable();
-	int insert(string key, entry value);
-	bool lookup(string key,entry &val);
+	string key, val;
+	fstream fin;
+	fin.open("keywords.txt", ios::in);
 
-private:
-	map<string, entry> table;
-};
+	while (!fin.eof())
+	{
+		fin >> key >> val;
+		keyMap[key] = val;
+	}
 
-SymbolTable::SymbolTable()
+	fin.close();
+
+	/*for (auto it = keyMap.begin(); it != keyMap.end(); it++)
+	{
+		cout << it->first << "\t" << it->second << endl;
+	}*/
+}
+int main()
 {
-}
-
-SymbolTable::~SymbolTable()
-{
-}
-
-int SymbolTable::insert(string key,entry value){
-	if (table.find(key) != table.end()){
-		return 0;
-	}
-	else{
-		table[key] = value;
-		return 1;
-	}
-}
-
-bool SymbolTable::lookup(string key, entry &val){
-	if (table.find(key) != table.end()){
-		val = table[key];
-		return true;
-	}
-	else{
-		return false;
-	}
-}
-
-  
-int main(int argc, char** argv){
 	
-	char string[100], re[100];
-	
-	while (1){
-		regex r;
-		cin >> string >> re;
-		cout << r.re2post(re) << endl;
-		cout << r.regMatch(string, re) << endl;;
-	}
+	genTokenMap();
+	lex();
+	cout << "---------------------------------------\n\n SYMBOL TABLE\n\n";
+	st.printSymbolTable();
+	_getch();
 	return 0;
 }

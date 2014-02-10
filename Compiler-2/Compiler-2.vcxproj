@@ -64,17 +64,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="lex.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="regex.cpp" />
+    <ClCompile Include="symbolTable.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="lex.h" />
     <ClInclude Include="regex.h" />
     <ClInclude Include="resource.h" />
+    <ClInclude Include="symbolTable.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="Compiler-2.rc" />
   </ItemGroup>
   <ItemGroup>
+    <Text Include="in.txt" />
     <Text Include="keywords.txt" />
     <Text Include="out.txt" />
     <Text Include="test.txt" />

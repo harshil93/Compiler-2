@@ -1,65 +1,73 @@
-		include
-		define
-		auto
-		break
-		case
-		char
-		const
-		continue
-		default
-		do
-		double
-		else
-		enum
-		extern
-		float
-		for
-		goto
-		if
-		int
-		long
-		register
-		return
-		short
-		signed
-		sizeof
-		static
-		struct
-		switch
-		typedef
-		union
-		unsigned
-		void
-		volatile
-		while
-
-		comments
-		integers
-		decimal point
-		exponent (E)
-
-binaryOp 	+ - / * %  =  
-relOP 		== < > <= >= !=
-logicalOP 	&& ||
-bitwiseOP	! & | ^(XOR)
-rLP	( rRP )
-cLP {  cRP } 
-sLP [ sRP ]
-	
-delim			; ,
-
-bitShift		<< >>
-string 		"string beween quotes"
-charLit		'c'
-lineComment
-blockComment
-id
-
-
-
-
-			token classes - string 
-			#include
-			#define
-			#include 
-			<stdio.h> interpret as string
+auto dt
+char dt
+const dt
+double dt
+extern dt
+float dt
+int dt
+long dt
+short dt
+signed dt
+static dt
+unsigned dt
+break reserved
+case reserved
+continue reserved
+default reserved
+do reserved
+else reserved
+enum reserved
+for reserved
+goto reserved
+if reserved
+register reserved
+return reserved
+sizeof reserved
+struct reserved
+switch reserved
+typedef reserved
+union reserved
+void reserved
+volatile reserved
+while reserved
++ binaryOp
+- binaryOp
+/ binaryOp
+* binaryOp
+% binaryOp
+= binaryOp
+== relOp
+!= relOp
+< relOp
+> relOp
+<= relOp
+>= relOp
+&& logicalOP
+|| logicalOP
+! bitwiseOp
+& bitwiseOp
+| bitwiseOp
+^ bitwiseOp
+~ bitwiseOp
+<< bitShift
+>> bitShift
+++ arithmetic
+-- arithmetic
++= assignment
+-= assignment
+*= assignment
+/= assignment
+%= assignment
+<<= assignment
+>>= assignment
+&= assignment
+^= assignment
+|= assignment
+( rLP
+) rRP
+{ cLP
+} cRP
+[ sLP
+] sRP
+; delim
+, delim
