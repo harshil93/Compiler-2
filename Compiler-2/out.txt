@@ -35,7 +35,7 @@ id b
 bitShift <<
 number 1
 rRP )
-logicalOP &&
+logicalOp &&
 Illegal identifier <1A1> at line no. 8
 rRP )
 cLP {
@@ -51,27 +51,23 @@ binaryOp /
 string "this string has illegal symbols @#$$$ but they are not Illegal!"
 string "string has \" escaped quotes"
 delim ;
-string "This has two closing quotes. The nearest one will terminate string. The other one is illegal"
 cRP }
 reserved return
 number 0
 delim ;
 cRP }
-Illegal character <@> at line no. 29
-bitwiseOp !
-Illegal character <`> at line no. 29
+Illegal character <@> at line no. 28
+Illegal character <`> at line no. 28
 ---------------------------------------
 
  SYMBOL TABLE
 
-!	bitwiseOp
 "Compiler"	string
-"This has two closing quotes. The nearest one will terminate string. The other one is illegal"	string
 "This is a string spanning multiple lines"	string
 "string has \" escaped quotes"	string
 "this string has illegal symbols @#$$$ but they are not Illegal!"	string
 #include <stdio.h>	preDir
-&&	logicalOP
+&&	logicalOp
 'a'	charLit
 (	rLP
 )	rRP
